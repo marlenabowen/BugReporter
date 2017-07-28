@@ -52,36 +52,36 @@ export default class BugReporter extends Component {
           <View style={styles.checkBoxContainer}>
             <CheckBox
               label='Android'
-              labelStyle={styles.label}
+              labelStyle={styles.checkBoxLabel}
               onChange={(checked) => this.handleCheckBoxChange('android', checked)}
-              underlayColor="#ffa5b3"
+              underlayColor="#A5DDFF"
             />
             <CheckBox
               label='iOS'
-              labelStyle={styles.label}
+              labelStyle={styles.checkBoxLabel}
               onChange={(checked) => this.handleCheckBoxChange('ios', checked)}
-              underlayColor="#ffa5b3"
+              underlayColor="#A5DDFF"
             />
             <CheckBox
               label='Causes crash'
-              labelStyle={styles.label}
+              labelStyle={styles.checkBoxLabel}
               onChange={(checked) => this.handleCheckBoxChange('crash', checked)}
-              underlayColor="#ffa5b3"
+              underlayColor="#A5DDFF"
             />
             <CheckBox
               label='Leaves app in bad state'
-              labelStyle={styles.label}
+              labelStyle={styles.checkBoxLabel}
               onChange={(checked) => this.handleCheckBoxChange('label', checked)}
-              underlayColor="#ffa5b3"
+              underlayColor="#A5DDFF"
             />
             <CheckBox
               label='Consistently reproducable'
-              labelStyle={styles.label}
+              labelStyle={styles.checkBoxLabel}
               onChange={(checked) => this.handleCheckBoxChange('reproducable', checked)}
-              underlayColor="#ffa5b3"
+              underlayColor="#A5DDFF"
             />
           </View>
-          <View style={styles.stepsToReproduceContainer}>
+          <View style={styles.largeTextContainer}>
             <TextInput
               autoCapitalize='none'
               autoCorrect={false}
@@ -90,10 +90,10 @@ export default class BugReporter extends Component {
               onChangeText={(text) => this.handleTextInputChange(text, 'steps')}
               placeholder="Steps to reproduce"
               placeholderTextColor='#666a6b'
-              style={styles.stepsToReproduceText}
+              style={styles.inputText}
             />
           </View>
-          <View style={styles.bugLocationContainer}>
+          <View style={styles.smallTextContainer}>
             <TextInput
               autoCapitalize='none'
               autoCorrect={false}
@@ -102,10 +102,10 @@ export default class BugReporter extends Component {
               onChangeText={(text) => this.handleTextInputChange(text, 'location')}
               placeholder="Location where bug occurs"
               placeholderTextColor='#666a6b'
-              style={styles.bugLocationText}
+              style={styles.inputText}
             />
           </View>
-          <View style={styles.versionContainer}>
+          <View style={styles.smallTextContainer}>
             <TextInput
               autoCapitalize='none'
               autoCorrect={false}
@@ -114,10 +114,10 @@ export default class BugReporter extends Component {
               onChangeText={(text) => this.handleTextInputChange(text, 'version')}
               placeholder="Version/s affected"
               placeholderTextColor='#666a6b'
-              style={styles.versionText}
+              style={styles.inputText}
             />
           </View>
-          <View style={styles.impactContainer}>
+          <View style={styles.largeTextContainer}>
             <TextInput
               autoCapitalize='none'
               autoCorrect={false}
@@ -126,7 +126,7 @@ export default class BugReporter extends Component {
               onChangeText={(text) => this.handleTextInputChange(text, 'impact')}
               placeholder="Impact"
               placeholderTextColor='#666a6b'
-              style={styles.impactText}
+              style={styles.inputText}
             />
           </View>
         </View>
@@ -146,17 +146,17 @@ export default class BugReporter extends Component {
 
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: '#ffa5b3',
+    backgroundColor: '#A5DDFF',
   },
   container: {
     padding: 30,
   },
   checkBoxContainer: {
     flex: 1,
-    marginTop: 10,
+    marginTop: 15,
     marginBottom: 10,
   },
-  label: {
+  checkBoxLabel: {
     color: 'black',
     fontFamily: 'AppleSDGothicNeo-Regular',
     fontSize: 20,
@@ -166,61 +166,33 @@ const styles = StyleSheet.create({
     fontSize: 30,
     textAlign: 'center',
   },
-  stepsToReproduceContainer: {
+  largeTextContainer: {
     borderColor: 'black',
     borderRadius: 7,
     borderWidth: 2,
     height: 100,
+    marginBottom: 5,
+    marginTop: 5,
     padding: 5,
   },
-  stepsToReproduceText: {
+  inputText: {
     color: 'black',
     fontFamily: 'AppleSDGothicNeo-Regular',
     fontSize: 20,
   },
-  bugLocationContainer: {
+  smallTextContainer: {
     borderColor: 'black',
     borderRadius: 7,
     borderWidth: 2,
     height: 50,
-    marginTop: 10,
+    marginBottom: 5,
+    marginTop: 5,
     padding: 5,
-  },
-  bugLocationText: {
-    color: 'black',
-    fontFamily: 'AppleSDGothicNeo-Regular',
-    fontSize: 20,
-  },
-  versionContainer: {
-    borderColor: 'black',
-    borderRadius: 7,
-    borderWidth: 2,
-    height: 50,
-    marginTop: 10,
-    padding: 5,
-  },
-  versionText: {
-    color: 'black',
-    fontFamily: 'AppleSDGothicNeo-Regular',
-    fontSize: 20,
-  },
-  impactContainer: {
-    borderColor: 'black',
-    borderRadius: 7,
-    borderWidth: 2,
-    height: 100,
-    marginTop: 10,
-    padding: 5,
-  },
-  impactText: {
-    color: 'black',
-    fontFamily: 'AppleSDGothicNeo-Regular',
-    fontSize: 20,
   },
   buttonView:{
     alignItems: 'center',
     marginBottom: 20,
-    marginTop: -10,
+    marginTop: -15,
   },
   buttonContainer: {
     borderColor: 'black',
